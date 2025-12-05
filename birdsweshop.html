@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>BirdsWeb Shop - BirdsWeb</title>
+
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      background-color: #fdfdfd;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      margin: 5px;
+    }
+
+    /* Contenitore principale dei prodotti */
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px; /* spazio tra i prodotti */
+      margin-top: 30px;
+    }
+
+    /* Ogni "scheda" prodotto */
+    .product {
+      width: 220px; /* due per riga su schermi medi */
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Link prodotti */
+    .product a {
+      display: block;
+      margin-top: 10px;
+      text-decoration: underline; /* stile link classico */
+      color: blue; /* blu standard */
+      font-weight: normal;
+    }
+
+    /* Rimuoviamo l’effetto hover */
+    .product a:hover {
+      color: blue;
+    }
+
+    /* Mobile: un prodotto per riga */
+    @media (max-width: 600px) {
+      .product {
+        width: 100%;
+      }
+    }
+  </style>
+
+   <style>
+/* Stile universale per link: mai viola, sempre blu */
+a {
+  color: #003366;      /* blu scuro */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #000080;      /* blu più scuro al passaggio del mouse */
+}
+
+a:visited {
+  color: #003366;      /* link visitati restano blu */
+}
+</style>
+</head>
+
+<body>
+  <h1>BirdsWeb Shop</h1>
+  <h2>Cose utili o inutili, servono sempre :D</h2>
+
+  <div class="product-grid">
+    <!-- Prodotto 1 -->
+    <div class="product">
+      <img src="gameboy.jpeg" alt="Nintendo Gameboy">
+      <a href="https://www.amazon.it/Nintendo-DMG-01-GameBoy-Pocket-Konsole/dp/B000R08L7M/">Nintendo Gameboy</a>
+    </div>
+
+    <!-- Prodotto 2 -->
+    <div class="product">
+      <img src="eastpak.jpg" alt="Astuccio Eastpak">
+      <a href="https://www.amazon.it/dp/B000S27MI8?th=1">Astuccio Eastpak (Nero)</a>
+    </div>
+
+    <!-- Prodotto 3 -->
+    <div class="product">
+      <img src="birbpark.jpg" alt="Gioco per cocoriti">
+      <a href="https://www.amazon.it/dp/B0DRP8LSWC">Gioco per cocoriti</a>
+    </div>
+
+    <!-- Prodotto 4 -->
+    <div class="product">
+      <img src="birbfood.jpg" alt="Mangime per cocoriti">
+      <a href="https://www.amazon.it/dp/B005EFUCDQ">Mangime per cocoriti</a>
+    </div>
+  </div>
+
+<a href="index.html">Ritorna al menu principale</a>
+<p><img src="bestviewed_budgie.gif"><img src="google_gif.gif"></p>
+
+</body>
+</html>

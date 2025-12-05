@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>BirdsWeb</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      padding: 20px;
+    }
+
+    .marquee-container {
+      width: 400px; /* larghezza limitata */
+      overflow: hidden; /* nasconde il testo fuori dai bordi */
+      border: 1px solid #ccc; /* bordo per evidenziare la finestra */
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>BirdsWeb</h1>
+
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="4">
+      Dove i cocoriti possono navigare sul net!
+    </marquee>
+  </div>
+
+  <p>
+    Benvenuti su BirdsWeb, se vi siete imbattuti in questo sito web,
+    allora hai proprio cliccato a caso come un vero cocorito curioso!
+    Alla fine hai fatto bene. Però, fai che ti faccia presentare BirdsWeb!
+    BirdsWeb è un sito web appositamente fatto per voi padroni di animali piumati e cocoriti,
+    con tante GIF, Meme e curiosità sul vostro piccolo animaletto piumato!
+    Preparatevi per una avventura emozionante!
+  </p>
+
+  <section>
+    <img src="melopsittacus.jpg">
+    <img src="crowanaburger.jpg">
+    <img src="borb.jpg">
+  </section>
+
+  <p><img src="budgie_banner.jpg"></p>
+
+  <h2>Le pagine di BirdsWeb</h2>
+  <h3>Qui comincia l'avventura</h3>
+
+  <section>
+    <p><a href="parrot_page.html">Parrot Page</a></p>
+    <p><a href="timeline.html">BirdsWeb Timeline</a></p>
+    <p><a href="pokemon_page.html">Pokémon Page</a></p>
+    <p><a href="radio_cocorito.html">Radio Cocorito</a></p>
+    <p><a href="cocorito_builder.html">Cocorito Builder</a></p>
+    <p><a href="random.html">Random Page</a></p>
+  </section>
+
+  <h2>Compra tutto quello che vuoi!</h2>
+  <h3>Hai bisogno di qualcosa? Vai al BirdsWeb Shop!</h3>
+
+  <section>
+    <p><a href="birdsweshop.html">BirdsWeb Shop</a></p>
+  </section>
+
+  <h2>✨ Curiosità sui cocoriti casuale!</h2>
+  <div class="curiosity-box" id="curiosity">
+    <!-- Qui appare la curiosità -->
+  </div>
+
+  <script>
+    const curiosita = [
+      "I cocoriti possono imparare a dire fino a 100 parole!",
+      "I cocoriti dormono su una zampa sola.",
+      "Esiste una razza di cocorito chiamata 'arcobaleno'.",
+      "I cocoriti non possono mangiare cioccolato o avocado — sono velenosi per loro!",
+      "Un cocorito può vivere fino a 15 anni se ben curato.",
+      "I cocoriti hanno le piume impermeabili!",
+      "Alcuni cocoriti possono imitare suonerie e notifiche del telefono.",
+      "I cocoriti sono originari dell'Australia.",
+      "Il nome 'budgie' viene da 'budgerigar', il loro nome in inglese.",
+      "Sognano mentre dormono, proprio come gli umani!"
+    ];
+
+    const casuale = Math.floor(Math.random() * curiosita.length);
+    document.getElementById("curiosity").innerText = curiosita[casuale];
+  </script>
+
+  <h2>BirdTrends </h2>
+<h3>Scopri cosa è di tendenza nel mondo dei birbs!</h3>
+
+
+<section class="birdtrends">
+  <div class="video-box">
+    <iframe width="600" height="340" 
+      src="https://www.youtube.com/embed/mY6aj_6U-jQ"
+      title="No Thoughts Just Birb"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+    <p>No Thoughts Just Birb</p>
+  </div>
+
+  <div class="video-box">
+    <iframe width="600" height="340"
+      src="https://www.youtube.com/embed/CHquMEfP62E"
+      title="Top 5 birds"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+    <p>Top 5 Birds</p>
+  </div>
+
+  <div class="video-box">
+    <iframe width="600" height="340"
+      src="https://www.youtube.com/embed/FpCXlBWA6do"
+      title="Birbs, borbs, and birbies — Internet Names for Birds"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+    <p>Birbs, borbs, and birbies</p>
+  </div>
+</section>
+  
+
+  <img src="parrot_obstacle.webp">
+  <img src="brush.gif">
+
+  <h2>Contattaci!</h2>
+  <p>Hai un messaggio per Mr. BirdsWeb? Scrivilo qui sotto:</p>
+
+  <form action="https://formsubmit.co/leomtx.animations@gmail.com" method="POST">
+    <label for="email">La tua email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Il tuo messaggio:</label><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+    <!-- Protezione dallo spam -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Dopo l'invio va a una pagina di ringraziamento (facoltativo) -->
+    <input type="hidden" name="_next" value="thanks.html">
+
+    <button type="submit">Invia Messaggio</button>
+  </form>
+
+  <p>
+    <img src="bestviewed_budgie.gif">
+    <img src="google_gif.gif">
+  </p>
+</body>
+</html>
