@@ -1,35 +1,11 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <title>Radio Cocorito</title>
-  <style>
-    body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #f0f8ff;
-      text-align: center;
-      padding: 40px;
-    }
-    h1 {
-      color: #00796b;
-    }
-    audio {
-      margin-top: 20px;
-      width: 300px;
-    }
-    #now-playing {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    button {
-      font-size: 16px;
-      padding: 10px 20px;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Pagina non trovata</title>
 
-   <style>
+ <style>
 /* Stile universale per link: mai viola, sempre blu */
 a {
   color: #003366;      /* blu scuro */
@@ -48,56 +24,26 @@ a:visited {
 </style>
 </head>
 <body>
+    
+    <h1>404 Not Found!</h1>
 
-  <h1>🎵 Radio Cocorito 🦜</h1>
+    <p>Ci dispiace, ma la pagina web è stata cancellata o corrotta per sbaglio dal programmatore.<br>
+    In caso di problemi, contatta lo sviluppatore oppure parlane con il Blockatiel qui sotto:</p>
 
-  <button onclick="startRadio()">▶️ Avvia la radio</button>
-  <audio id="player" controls></audio>
-  <div id="now-playing">Premi il bottone per iniziare!</div>
+    <img src="Blockatiel.webp" alt="Blockatiel - Staff di BirdsWeb" />
 
-  <script>
-    const playlist = [
-      "radio_cocorito_audio/song1.wav",
-      "radio_cocorito_audio/song2.mp3",
-      "radio_cocorito_audio/song3.mp3",
-      "radio_cocorito_audio/song4.mp3",
-    ];
+    <p><a href="index.html">Ritorna al menu principale</a></p>
 
-    let currentTrack = 0;
-    const player = document.getElementById('player');
-    const nowPlaying = document.getElementById('now-playing');
+    <footer>
+        <p>
+            <img src="bestviewed_budgie.gif" alt="Best viewed with Budgie" />
+            <img src="google_gif.gif" alt="Made with Google" />
+        </p>
+    </footer>
 
-    function loadTrack(index) {
-      player.src = playlist[index];
-      player.play();
-      nowPlaying.textContent = "🎧 In riproduzione: " + playlist[index].split('/').pop();
-    }
-
-    player.addEventListener('ended', () => {
-      currentTrack++;
-      if (currentTrack >= playlist.length) {
-        currentTrack = 0;
-      }
-      loadTrack(currentTrack);
-    });
-
-    function startRadio() {
-      loadTrack(currentTrack);
-    }
-  </script>
-
-  <img src="radio.gif">
-
-  <a href="index.html">Ritorna al menu principale</a>
-<p><img src="bestviewed_budgie.gif"><img src="google_gif.gif"></p>
-  
 </body>
 </html>
 
-
-
-
-
     
     
 
@@ -107,6 +53,7 @@ a:visited {
 
 
     
+
 
 
 
