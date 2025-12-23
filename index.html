@@ -126,21 +126,28 @@
   <h2>Contattaci!</h2>
   <p>Hai un messaggio per Mr. BirdsWeb? Scrivilo qui sotto:</p>
 
-  <form action="https://formsubmit.co/leomtx.animations@gmail.com" method="POST">
-    <label for="email">La tua email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+<table>
+  <tr>
+    <td>
+      <form action="https://formsubmit.co/leomtx.animations@gmail.com" method="POST">
+        <label for="email">La tua email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-    <label for="message">Il tuo messaggio:</label><br>
-    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+        <label for="message">Il tuo messaggio:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
 
-    <!-- Protezione dallo spam -->
-    <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="thanks.html">
 
-    <!-- Dopo l'invio va a una pagina di ringraziamento (facoltativo) -->
-    <input type="hidden" name="_next" value="thanks.html">
+        <button type="submit">Invia Messaggio</button>
+      </form>
+    </td>
+    <td>
+      <img src="email.gif" alt="e-Mail">
+    </td>
+  </tr>
+</table>
 
-    <button type="submit">Invia Messaggio</button>
-  </form>
 
   <p>
     <img src="bestviewed_budgie.gif">
@@ -149,6 +156,7 @@
 </body>
 
 </html>
+
 
 
 
