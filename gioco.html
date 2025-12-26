@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Luck Game - BirdsWeb</title>
+</head>
+<body>
+
+  <h1>Inizia la tua partita qui</h1>
+  <button onclick="gioca()">Clicca qui📎</button>
+  <div id="risultato"></div>
+
+  <script>
+    function gioca() {
+      const chance = Math.random(); // numero casuale tra 0 e 1
+      if(chance < 0.5) { 
+        // PERDE
+        document.getElementById("risultato").innerHTML = `
+          <h2>HAI PERSO :(</h2>
+          <img src="lamont_owl.webp"> alt="Uccello triste">
+        `;
+      } else {
+        // VINCE
+        window.location.href = "vincita.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
