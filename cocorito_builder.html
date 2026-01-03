@@ -1,93 +1,174 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Pagina non trovata</title>
+  <meta charset="UTF-8" />
+  <title>Cocorito Builder</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fffbe6;
+      text-align: center;
+      margin: 20px;
+    }
 
- <style>
-/* Stile universale per link: mai viola, sempre blu */
-a {
-  color: #003366;      /* blu scuro */
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
+    #cocorito {
+      width: 200px;
+      height: 200px;
+      margin: 30px auto;
+      background-color: lightblue;
+      border-radius: 50% 50% 40% 40%;
+      position: relative;
+      border: 4px solid #444;
+      overflow: visible; /* per mostrare accessori fuori */
+      user-select: none;
+    }
 
-a:hover {
-  color: #000080;      /* blu più scuro al passaggio del mouse */
-}
+    .eye {
+      width: 20px;
+      height: 20px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      top: 50px;
+    }
 
-a:visited {
-  color: #003366;      /* link visitati restano blu */
-}
-</style>
+    .eye.left {
+      left: 40px;
+    }
+
+    .eye.right {
+      right: 40px;
+    }
+
+    .beak {
+      width: 30px;
+      height: 30px;
+      background: orange;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      position: absolute;
+      top: 100px;
+      left: 85px;
+    }
+
+    .accessorio {
+      position: absolute;
+      font-size: 80px;
+      cursor: move;
+      user-select: none;
+      top: 10px;
+      left: 70px;
+    }
+
+    .controls {
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    button, input[type="color"] {
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 16px;
+      background: #ffe066;
+      transition: background-color 0.3s;
+    }
+
+    button:hover, input[type="color"]:hover {
+      background: #ffcd39;
+    }
+  </style>
 </head>
 <body>
-    
-    <h1>404 Not Found!</h1>
 
-    <p>Ci dispiace, ma la pagina web è stata cancellata o corrotta per sbaglio dal programmatore.<br>
-    In caso di problemi, contatta lo sviluppatore oppure parlane con il Blockatiel qui sotto:</p>
+  <h1>🛠️ Cocorito Builder</h1>
 
-    <img src="Blockatiel.webp" alt="Blockatiel - Staff di BirdsWeb" />
+  <div id="cocorito">
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="beak"></div>
+  </div>
 
-    <p><a href="index.html">Ritorna al menu principale</a></p>
+  <div class="controls">
+    <button onclick="aggiungiAccessorio()">➕ Aggiungi cappellino</button>
+    <label>
+      Cambia colore:
+      <input type="color" id="coloreCocorito" value="#add8e6" />
+    </label>
+    <button onclick="scaricaImmagine()">⬇️ Scarica immagine</button>
+  </div>
 
-    <footer>
-        <p>
-            <img src="bestviewed_budgie.gif" alt="Best viewed with Budgie" />
-            <img src="ie_gif.gif" alt="Made with Internet Explorer" />
-        </p>
-    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    const cocorito = document.getElementById('cocorito');
+    const coloreInput = document.getElementById('coloreCocorito');
+
+    coloreInput.addEventListener('input', () => {
+      cocorito.style.backgroundColor = coloreInput.value;
+    });
+
+    function aggiungiAccessorio() {
+      if (document.getElementById('cappellino')) return;
+
+      const accessorio = document.createElement('div');
+      accessorio.id = 'cappellino';
+      accessorio.innerText = '🎩'; 
+      accessorio.className = 'accessorio';
+
+      // Posizione iniziale
+      accessorio.style.left = '70px';
+      accessorio.style.top = '10px';
+      accessorio.draggable = true;
+
+      // Dragging
+      accessorio.onmousedown = function(event) {
+        event.preventDefault();
+
+        let shiftX = event.clientX - accessorio.getBoundingClientRect().left;
+        let shiftY = event.clientY - accessorio.getBoundingClientRect().top;
+
+        function moveAt(pageX, pageY) {
+          accessorio.style.left = pageX - cocorito.getBoundingClientRect().left - shiftX + 'px';
+          accessorio.style.top = pageY - cocorito.getBoundingClientRect().top - shiftY + 'px';
+        }
+
+        function onMouseMove(event) {
+          moveAt(event.pageX, event.pageY);
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+
+        accessorio.onmouseup = function() {
+          document.removeEventListener('mousemove', onMouseMove);
+          accessorio.onmouseup = null;
+        };
+      };
+
+      accessorio.ondragstart = () => false;
+
+      cocorito.appendChild(accessorio);
+    }
+
+    function scaricaImmagine() {
+      // Usa html2canvas per fare screenshot del div cocorito (con accessorio)
+      html2canvas(cocorito, {backgroundColor: null}).then(canvas => {
+        // Crea link per il download
+        const link = document.createElement('a');
+        link.download = 'cocorito.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    }
+  </script>
+
+<p> <a href="index.html">🔙 Torna alla pagina principale</a></p>
+
+<p><img src="bestviewed_budgie.gif"><img src="google_gif.gif"></p>
 
 </body>
 </html>
-
-    
-    
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
