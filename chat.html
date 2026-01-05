@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Chirp Room - BirdsWeb</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Chirp Room 🐦💬</h1>
+
+  <!-- Lista dei messaggi -->
+  <ul id="chat-list" style="border:1px solid #ccc; padding:10px; height:300px; overflow-y:scroll;"></ul>
+
+  <!-- Form per inviare messaggi -->
+  <form id="chat-form">
+    <input type="text" id="user" placeholder="Nome" required>
+    <input type="text" id="message" placeholder="Scrivi un messaggio..." required>
+    <button type="submit">Invia</button>
+  </form>
+
+  <script src="chat.js"></script>
+</body>
+</html>
