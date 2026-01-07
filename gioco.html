@@ -9,7 +9,7 @@
 <body>
 
   <h1>Inizia la tua partita qui</h1>
-  <button onclick="gioca()">Clicca qui📎</button>
+  <button onclick="gioca()">Clicca qui</button>
   <div id="risultato"></div>
 
   <script>
@@ -19,7 +19,8 @@
         // PERDE
         document.getElementById("risultato").innerHTML = `
           <h2>HAI PERSO :(</h2>
-          <img src="lamont_bird.webp"> alt="Uccello triste">
+          <img src="lamont-bird.webp">
+          <p>Beh, tenta di nuovo! Non arrenderti mai bro!</p>
         `;
       } else {
         // VINCE
@@ -27,6 +28,6 @@
       }
     }
   </script>
-
+  
 </body>
 </html>
